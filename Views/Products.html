@@ -1,0 +1,24 @@
+﻿
+<div class="col-md-12">
+    <div class="col-md-12">
+        <h1 ng-bind="title"></h1>
+        <button type="button"
+                class="btn btn-success"
+                data-toggle="modal"
+                data-target="#newProductModal">
+            Add product
+        </button>
+    </div>
+
+    <div class="col-md-4"
+         ng-repeat="product in products track by $index">
+        <!--<h1 ng-attri-->
+        <h1 ng-bind="product.name"></h1>
+        <p ng-bind="product.description"></p>
+        <p ng-bind="product.price"></p>
+
+        <button class="btn btn-danger" ng-click="remove($index)"><i class="glyphicon glyphicon-trash"></i></button>
+    </div>
+
+</div>
+<div ng-include="'Views/Partials/NewProductModal.html'"></div>
